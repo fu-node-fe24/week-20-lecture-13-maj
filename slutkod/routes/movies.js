@@ -10,13 +10,10 @@ router.get('/', (req, res) => {
     let filtered = movies;
     if(category && year) {
         filtered = movies.filter(m => m.category === category && m.year === parseInt(year));
-        console.log(filtered);
     } else if(category) {
         filtered = movies.filter(m => m.category === category);
-        console.log(filtered);
     } else if(year) {
         filtered = movies.filter(m => m.year === parseInt(year));
-        console.log(filtered);
     }
     
     res.json({
